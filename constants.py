@@ -76,7 +76,7 @@ WHITE = (255, 255, 255)
 LIGHT_GRAY = (134, 134, 134)
 
 #image path :
-image1 = "Images/noa_kirel.png"
-image2 = "Images/ronaldo.png"
-image3 = 'Images/gay_pics.png'
+img1_post_path = "Images/noa_kirel.png"
+img2_post_path = "Images/ronaldo.png"
+img3_post_path = "Images/gay_pics.png"
 

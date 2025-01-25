@@ -6,7 +6,7 @@ from helpers import screen
 
 
 class Post:
-    def __init__(self,username,location,description,likes_counter,comments):
+    def __init__(self,username,location,description):
         self.username = username
         self.location = location
         self.description = description
@@ -52,8 +52,8 @@ class Post:
 # ############################################################################### #
 class ImagePost(Post):
 
-    def __init__(self, image , username, location, description, like_counter):
-        super().__init__(username, location, description , like_counter)
+    def __init__(self, image , username, location, description):
+        super().__init__(username, location, description)
         self.image = image
     def display(self):
         img = pygame.image.load(self.image)

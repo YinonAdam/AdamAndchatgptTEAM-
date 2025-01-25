@@ -19,9 +19,21 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
-    pic_arr = ImagePost [['noa_k']]
+    posts_data_list = [
+        [img1_post_path, "noam_belkin", "dimona", "give this post a like if you think messi is better", "image"],
+        [img2_post_path, "omerKorin1808", "beer sheva", "love the camel", "image"],
+        [img3_post_path, "mashash", "Manchester",
+         "i love big black dick and femboys", "image"]]
 
+    posts_list= []
+    for posts_data in posts_data_list:
+        if posts_data[-1] == "image":
+            post = ImagePost(posts_data[0], posts_data[1],posts_data[2],posts_data[3])
+        posts_list.append(post)
     running = True
+    cur_post = posts_list[2]
+    cur_post_num = 3
+    start_comment = 0
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
@@ -32,6 +44,8 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
+        cur_post = posts_list[cur_post_num]
+        cur_post.display()
 
         # Update display - without input update everything
         pygame.display.update()
