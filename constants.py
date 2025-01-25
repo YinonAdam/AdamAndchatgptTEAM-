@@ -76,7 +76,7 @@ WHITE = (255, 255, 255)
 LIGHT_GRAY = (134, 134, 134)
 
 #image path :
-img1_post_path = "Images/noa_kirel.png"
-img2_post_path = "Images/ronaldo.png"
-img3_post_path = "Images/gay_pics.png"
-
+img1_post_path = "Images/ronaldo.jpg"
+img2_post_path = "Images/noa_kirel.jpg"
+img3_post_path = "Images/gay_pics.jpg"
+img4_post_path = "Images/Etain_NUDES.jpg"

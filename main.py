@@ -21,17 +21,20 @@ def main():
     # TODO: add a post here
     posts_data_list = [
         [img1_post_path, "noam_belkin", "dimona", "give this post a like if you think messi is better", "image"],
-        [img2_post_path, "omerKorin1808", "beer sheva", "love the camel", "image"],
+        [img2_post_path, "omerKorin1808", "beer sheva", "love the camel and cool aid", "image"],
         [img3_post_path, "mashash", "Manchester",
-         "i love big black dick and femboys", "image"]]
+         "i love big black dick and femboys", "image"],[" when life give you time you need to goon - yarin 2025",(0,0,0),(109 ,162 ,206),"yarin_pin","mashash house","IM GOONING RIGHT NOW GANG!!!!"]
+    , img4_post_path,]
 
     posts_list= []
     for posts_data in posts_data_list:
         if posts_data[-1] == "image":
             post = ImagePost(posts_data[0], posts_data[1],posts_data[2],posts_data[3])
+        else:
+            post = TextPost(posts_data[0],posts_data[1],posts_data[2],posts_data[3],posts_data[4],posts_data[5])
         posts_list.append(post)
     running = True
-    cur_post = posts_list[2]
+    cur_post = posts_list[0]
     cur_post_num = 3
     start_comment = 0
     while running:

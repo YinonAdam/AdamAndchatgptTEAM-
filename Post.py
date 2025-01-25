@@ -2,7 +2,7 @@ import pygame.image
 from pygame.examples.cursors import image
 
 from constants import *
-from helpers import screen
+from helpers import screen,from_text_to_array,center_text
 
 
 class Post:
@@ -29,7 +29,7 @@ class Post:
 
         :return: None
         """
-        position_index = self.comments_display_index
+        position_index = 0
         # If there are more than 4 comments, print "view more comments"
         if len(self.comments) > NUM_OF_COMMENTS_TO_DISPLAY:
             comment_font = pygame.font.SysFont('chalkduster.ttf',
@@ -57,7 +57,7 @@ class ImagePost(Post):
         self.image = image
     def display(self):
         img = pygame.image.load(self.image)
-        img = pygame.transform.scale(self.image, (POST_WIDTH, POST_HEIGHT))
+        img = pygame.transform.scale(img, (POST_WIDTH, POST_HEIGHT))
         screen.blit(img, (POST_X_POS,POST_Y_POS))
 
         font = pygame.font.SysFont(FONT_NAME,UI_FONT_SIZE)
@@ -74,6 +74,47 @@ class ImagePost(Post):
         screen.blit(like_text, (LIKE_TEXT_X_POS,LIKE_BUTTON_Y_POS))
 
         self.display_comments()
+########################################################################################################
+########################################################################################################
+
+class TextPost(Post):
+    def __init__(self, text, text_color , text_background_col,  username, location, description):
+        super().__init__( username, location, description)
+        self.text = text
+        self.text_color = text_color
+        self.text_background_col = text_background_col
+
+    def display(self):
+        square = pygame.Rect(POST_X_POS,POST_Y_POS,POST_WIDTH,POST_HEIGHT)
+        pygame.draw.rect(screen,self.text_background_col, square)
+
+        font2 = pygame.font.SysFont(FONT_NAME,TEXT_POST_FONT_SIZE)
+        user_text = font2.render(self.text,True,self.text_color)
+        arr_text = from_text_to_array(self.text)
+        count = 0
+        for item in arr_text:
+            count += 1
+            text_text = font2.render(item,True,self.text_color)
+            pos = center_text(len(arr_text),text_text,count)
+            screen.blit(text_text,pos)
+
+        font = pygame.font.SysFont(FONT_NAME,UI_FONT_SIZE)
+        username_text = font.render(self.username,True,(0,0,0))
+        screen.blit(username_text,(USER_NAME_X_POS,USER_NAME_Y_POS))
+
+        location_text = font.render(self.location, True, (0, 0, 0))
+        screen.blit(location_text, (LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS))
+
+        description_text = font.render(self.description, True, (0, 0, 0))
+        screen.blit(description_text, (DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS))
+
+        like_text = font.render(str(self.likes_counter),True,(0,0,0))
+        screen.blit(like_text, (LIKE_TEXT_X_POS,LIKE_BUTTON_Y_POS))
+
+        self.display_comments()
+
+
+
 
 
 
