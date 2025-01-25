@@ -61,16 +61,22 @@ COMMENT_LINE_HEIGHT = 20
 # The size of the text that on the post
 TEXT_POST_FONT_SIZE = 40
 
+
 NUM_OF_COMMENTS_TO_DISPLAY = 6
 
 COMMENT_TEXT_SIZE = 16
 
 UI_FONT_SIZE = 20
-
+FONT_NAME = "chalkduster.ttf"
 LINE_MAX_LENGTH = 20
 
 BLACK = (0, 0, 0)
 GREY = (50, 50, 50)
 WHITE = (255, 255, 255)
 LIGHT_GRAY = (134, 134, 134)
+
+#image path :
+image1 = "Images/noa_kirel.png"
+image2 = "Images/ronaldo.png"
+image3 = 'Images/gay_pics.png'
 

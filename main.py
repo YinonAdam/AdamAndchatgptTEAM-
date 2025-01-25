@@ -1,6 +1,7 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
+from Post import *
 
 
 def main():
@@ -18,6 +19,7 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
+    pic_arr = ImagePost [['noa_k']]
 
     running = True
     while running:
